@@ -12,13 +12,13 @@ class Role(db.Model, SerializerMixin):
     icon = db.Column(db.String)
     description = db.Column(db.String)
 
-    heroes = db.relationship('Hero', backref = 'roles')
+    heroes = db.relationship('Hero', backref = 'role')
 
 
 class Hero(db.Model, SerializerMixin):
     __tablename__ = 'heroes'
 
-    serialize_only=('id', 'name', 'icon', 'ability1', 'ability2', 'ability3', 'ability4', 'ultimate_ability')
+    serialize_only=('id', 'name', 'icon', 'image', 'ability1', 'ability2', 'ability3', 'ability4', 'ultimate_ability', 'ability1_icon', 'ability2_icon', 'ability3_icon', 'ability4_icon', 'ultimate_icon')
     serialize_rules= ('-passive_abilities.heroes',)
 
     id = db.Column(db.Integer, primary_key=True)
@@ -72,7 +72,7 @@ class GameMode(db.Model, SerializerMixin):
     icon = db.Column(db.String)
     description = db.Column(db.String)
 
-    maps = db.relationship('Map', backref = 'game_modes')
+    maps = db.relationship('Map', backref = 'game_mode')
 
 
 class Map(db.Model, SerializerMixin):
@@ -96,7 +96,7 @@ class User(db.Model, SerializerMixin):
     username = db.Column(db.String, unique = True, nullable = False)
     _password_hash = db.Column(db.String, nullable = False)
 
-    comments = db.relationship('Comment', backref = 'users')
+    comments = db.relationship('Comment', backref = 'user')
 
 
 class Comment(db.Model, SerializerMixin):
