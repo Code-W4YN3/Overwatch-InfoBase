@@ -18,7 +18,7 @@ class Role(db.Model, SerializerMixin):
 class Hero(db.Model, SerializerMixin):
     __tablename__ = 'heroes'
 
-    serialize_only=('id', 'name', 'icon', 'image', 'ability1', 'ability2', 'ability3', 'ability4', 'ultimate_ability', 'ability1_icon', 'ability2_icon', 'ability3_icon', 'ability4_icon', 'ultimate_icon')
+    serialize_only=('passive_abilities', 'role_id', 'id', 'name', 'icon', 'image', 'ability1', 'ability2', 'ability3', 'ability4', 'ultimate_ability', 'ability1_icon', 'ability2_icon', 'ability3_icon', 'ability4_icon', 'ultimate_icon')
     serialize_rules= ('-passive_abilities.heroes',)
 
     id = db.Column(db.Integer, primary_key=True)

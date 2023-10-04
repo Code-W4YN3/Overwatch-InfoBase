@@ -1,42 +1,117 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+#navBar{
+  position: fixed;
+  top: 2%;
+  width: 96%;
+  height: 10%;
+  background-color: white;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius:15px;
+  z-index: 1000;
+}
+
+.navContainers{
+  width: 10%;
+  height: 60%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+#title{
+  position: absolute;
+  top: 25%;
+  width: 100%;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#season{
+  color: white;
+  font-size: 200%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#overwatch2{
+  position: relative;
+  width: 60%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Heroes style */
+
+#heroesheader{
+  text-align: center;
 }
 
-.card {
-  padding: 2em;
+#heroeshead{
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+#heroTitle{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  font-size: 250%;
+  color: white;
 }
+
+#heroesBody{
+  background-color: rgb(45, 194, 248);
+}
+
+#heroList{
+  text-align: center;
+}
+
+/* Hero Card Style */
+
+.heroCard{
+  background-color: rgb(255, 253, 251);
+  width: 15%;
+  border-style: outset;
+  margin-left: 0.75%;
+  margin-right: 1.25%;
+  margin-bottom: 2%;
+  display: inline-block;
+}
+
+.heroIcons{
+  width: 98%;
+  background-color: azure;
+  margin-top: 1%;
+  margin-bottom: -10px;
+}
+
+.heroCardDetails{
+  position: relative;
+  top: -1%;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: rgb(193, 193, 193);
+}
+
+.heroNameBox{
+  display: inline-flex;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.heroName{
+  position: relative;
+  top: 0%;
+}
+
+.roleIcons{
+  width: 20px;
+  height: 20px;
+  padding-top: 1px;
+  margin-right: 8%;
+  margin-left: -8%;
+  
+}
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@ api = Api(app)
 
 @app.route('/')
 def home():
-    return 'Welcome to Overwatch 2 Api!'
+    return {'Welcome': 'to Overwatch 2 Api!'}
 
 class Heroes(Resource):
     
