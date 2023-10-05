@@ -173,6 +173,22 @@
   height: 75%;
 }
 
+/* Maps page style */
+
+#mapsBody{
+  background-image: url(https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90);
+  margin-top: -20px;
+}
+
+.mapDivs{
+  width: 45%;
+  margin-left: 2%;
+  margin-right: 1.5%;
+  margin-bottom: 2%;
+  border-style: outset;
+  display: inline-block;
+  background-color: rgb(255, 253, 251);
+}
 
 
 

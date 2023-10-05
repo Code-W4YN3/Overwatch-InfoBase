@@ -5,6 +5,7 @@ import Home from './Home';
 import NavBar from './Navbar';
 import Heroes from './Heroes';
 import Hero from './Hero';
+import Maps from './Maps';
 
 function App() {
   const [ heroID, setHeroID ] = useState(1)
@@ -26,6 +27,7 @@ function App() {
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/heroes' element={<Heroes onChange={handleChange} urlPath={urlPath}/>}/>
+          <Route path='/maps' element={<Maps />} />
           <Route path='/heroes/D.va' element={<Hero id={1}/>} />
           <Route path='/heroes/Doomfist' element={<Hero id={2}/>} />
           <Route path='/heroes/Junker Queen' element={<Hero id={3}/>} />
@@ -64,7 +66,6 @@ function App() {
           <Route path='/heroes/Mercy' element={<Hero id={36}/>} />
           <Route path='/heroes/Moira' element={<Hero id={37}/>} />
           <Route path='/heroes/Zenyatta' element={<Hero id={38}/>} />
-
       </Routes>
     </>
   );
