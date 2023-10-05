@@ -53,12 +53,17 @@
 }
 
 #heroesBody{
-  background-color: rgb(45, 194, 248);
+  background-image: url(https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90);
 }
 
-#heroList{
+.heroList{
   text-align: center;
 }
+
+.roleTitle{
+  margin-left: 10%;
+}
+
 
 /* Hero Card Style */
 
@@ -108,6 +113,65 @@
   
 }
 
+/* Hero about style */
+
+#heroData{
+  position: absolute;
+  width: 60%;
+  height: 90%;
+  top: 8%;
+  margin-left: 5%;
+}
+
+.abilityInfo{
+  margin-left: 3%;
+  font-size: 120%;
+  color: azure;
+  
+}
+
+.abilityIconsDiv{
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  border-style: outset;
+  border-color: white;
+  background-color: rgba(146, 146, 146, 0.412);
+}
+
+.abilityIcons{
+  margin-top: 13%;
+  width: 75%;
+  height: 75%;
+}
+
+
+.ultimateInfo{
+  margin-left: 3%;
+  font-size: 120%;
+  color: azure;
+  
+}
+
+.ultimateIconsDiv{
+  text-align: center;
+  width: 85px;
+  height: 85px;
+  border-radius: 100%;
+  border-style: outset;
+  border-color: white;
+  background-color: rgba(146, 146, 146, 0.412);
+  outline-style: outset;
+  outline-color: rgb(255, 187, 60);
+  outline-width: 5px;
+}
+
+.ultimateIcons{
+  margin-top: 13%;
+  width: 75%;
+  height: 75%;
+}
 
 
 

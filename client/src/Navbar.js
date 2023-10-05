@@ -7,6 +7,7 @@ function NavBar() {
         <div id='navBar'>
             <div className="navContainers">
                 <Link className='navButtons' to={'/'}> Home </Link>
+                <Link className='navButtons' to={'/heroes'}> Heroes </Link>
             </div>
         </div>
         </>

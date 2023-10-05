@@ -1,8 +1,10 @@
 import { useState,useEffect } from "react"
 import HeroCard from "./HeroCard"
 
-function Heroes(){
+function Heroes({ onChange, urlPath }){
     const [ heroes, setHeroes] = useState([])
+    const [ roles, setRoles ] = useState([])
+    
 
     useEffect(()=>{
         fetch('/heroes')
@@ -10,8 +12,18 @@ function Heroes(){
         .then(data => {
           setHeroes(data)
         })
-      }, [])
-      
+        fetch('/roles')
+        .then((res)=> res.json())
+        .then(data => {
+          setRoles(data)
+        })
+    }, [])
+
+    function handleSelect(no, hName){
+        onChange(no, hName)
+    }
+
+
     return(
         <>
         <header id="heroesheader">
@@ -27,9 +39,25 @@ function Heroes(){
             </div>
             <br />
             <p>Overwatch features an international cast of powerful heroes with captivating personalities and backstories. Explore the full roster below.</p>
-            <div id="heroList">
-                {heroes.map((hero)=>(
-                    <HeroCard hero={hero} key={hero.id}/>
+            <h2 className="roleTitles">TANK</h2>
+            <span className="roleDescription">{}</span>
+            <div className="heroList">
+                {heroes.filter(hero => hero.role_id == 1).map((hero)=>(
+                    <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
+                ))}
+            </div>
+            <h2 className="roleTitles">DAMAGE</h2>
+            <span className="roleDescription">{}</span>
+            <div className="heroList">
+                {heroes.filter(hero => hero.role_id == 2).map((hero)=>(
+                    <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
+                ))}
+            </div>
+            <h2 className="roleTitles">SUPPORT</h2>
+            <span className="roleDescription">{}</span>
+            <div className="heroList">
+                {heroes.filter(hero => hero.role_id == 3).map((hero)=>(
+                    <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>
         </div>

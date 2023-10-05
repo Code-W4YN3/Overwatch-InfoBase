@@ -1,7 +1,13 @@
-function HeroCard({ hero }){
+function HeroCard({ hero, onSelect, urlPath }){
+
+    function handleClick(){
+        onSelect(hero.id, hero.name)
+    }
+
     if(hero.role_id == 1){
         return(
-        <div className="heroCard">
+        <a href={urlPath}>
+        <div className="heroCard" onClick={handleClick}>
             <img className="heroIcons" alt={hero.name} src={hero.icon} />
             <div className="heroCardDetails">
                 <div className="heroNameBox">
@@ -10,10 +16,12 @@ function HeroCard({ hero }){
                 </div>
             </div>
         </div>
+        </a>
         )
     }else if(hero.role_id == 2){
         return(
-            <div className="heroCard">
+            <a href={urlPath}>
+            <div className="heroCard" onClick={handleClick}>
                 <img className="heroIcons" alt={hero.name} src={hero.icon} />
                 <div className="heroCardDetails">
                     <div className="heroNameBox">
@@ -22,10 +30,12 @@ function HeroCard({ hero }){
                     </div>
                 </div>
             </div>
+            </a>
             )
     }else{
         return(
-            <div className="heroCard">
+            <a href={urlPath}>
+            <div className="heroCard" onClick={handleClick}>
                 <img className="heroIcons" alt={hero.name} src={hero.icon} />
                 <div className="heroCardDetails">
                     <div className="heroNameBox">
@@ -34,6 +44,7 @@ function HeroCard({ hero }){
                     </div>
                 </div>
             </div>
+            </a>
             )
     }
   }
