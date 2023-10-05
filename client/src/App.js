@@ -6,6 +6,8 @@ import NavBar from './Navbar';
 import Heroes from './Heroes';
 import Hero from './Hero';
 import Maps from './Maps';
+import Guides from './Guides';
+import SignUp from './signUp';
 
 function App() {
   const [ heroID, setHeroID ] = useState(1)
@@ -28,6 +30,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/heroes' element={<Heroes onChange={handleChange} urlPath={urlPath}/>}/>
           <Route path='/maps' element={<Maps />} />
+          <Route path='/guides' element={<Guides />} />
+          <Route path='/signup' element={<SignUp />} />
           <Route path='/heroes/D.va' element={<Hero id={1}/>} />
           <Route path='/heroes/Doomfist' element={<Hero id={2}/>} />
           <Route path='/heroes/Junker Queen' element={<Hero id={3}/>} />

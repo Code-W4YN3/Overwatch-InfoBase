@@ -31,30 +31,23 @@ function Heroes({ onChange, urlPath }){
             <h1 id="heroTitle">Heroes</h1>
         </header>
         <div id="heroesBody">
-            <div id="heroesButtons">
-                <button>All</button>
-                <button>Tank</button>
-                <button>Damage</button>
-                <button>Support</button>
-            </div>
-            <br />
             <p>Overwatch features an international cast of powerful heroes with captivating personalities and backstories. Explore the full roster below.</p>
             <h2 className="roleTitles">TANK</h2>
-            <span className="roleDescription">{}</span>
+            <span className="roleDescription">{roles[0]?.description}</span>
             <div className="heroList">
                 {heroes.filter(hero => hero.role_id == 1).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>
             <h2 className="roleTitles">DAMAGE</h2>
-            <span className="roleDescription">{}</span>
+            <span className="roleDescription">{roles[1]?.description}</span>
             <div className="heroList">
                 {heroes.filter(hero => hero.role_id == 2).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>
             <h2 className="roleTitles">SUPPORT</h2>
-            <span className="roleDescription">{}</span>
+            <span className="roleDescription">{roles[2]?.description}</span>
             <div className="heroList">
                 {heroes.filter(hero => hero.role_id == 3).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>

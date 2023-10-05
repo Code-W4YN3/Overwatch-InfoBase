@@ -1,6 +1,8 @@
-from config import db
+from config import db, bcrypt
 from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.orm import validates
+from sqlalchemy.ext.hybrid import hybrid_property
+
 
 class Role(db.Model, SerializerMixin):
     __tablename__ = 'roles'
@@ -90,22 +92,40 @@ class Map(db.Model, SerializerMixin):
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
-    serialize_rules= ('-comments.user',)
+    serialize_rules= ('-saves.user',)
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String, unique = True, nullable = False)
     _password_hash = db.Column(db.String, nullable = False)
 
-    comments = db.relationship('Comment', backref = 'user')
+    saves = db.relationship('Save', backref = 'user')
+
+    @hybrid_property
+    def password_hash(self):
+        return {"message":"You can't view password hashes"}
+    
+    @password_hash.setter
+    def password_hash(self,password):
+        our_hash = bcrypt.generate_password_hash(password.encode('utf-8'))
+        self._password_hash = our_hash.decode('utf-8')
+
+    def validatepassword(self,password):
+        is_valid = bcrypt.check_password_hash(self._password_hash,password.encode('utf-8'))
+        return is_valid
 
 
-class Comment(db.Model, SerializerMixin):
-    __tablename__ = 'comments'
+class Save(db.Model, SerializerMixin):
+    __tablename__ = 'saves'
 
-    serialize_rules= ('-user.comments',)
+    serialize_rules= ('-user.saves',)
 
     id = db.Column(db.Integer, primary_key=True)
-    category = db.Column(db.String, nullable = False)
-    comment = db.Column(db.String)
+    name = db.Column(db.String)
+    image = db.Column(db.String)
+    url = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
+
+
+
+
 

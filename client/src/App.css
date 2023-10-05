@@ -54,6 +54,7 @@
 
 #heroesBody{
   background-image: url(https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90);
+  margin-top: -7px;
 }
 
 .heroList{
@@ -75,6 +76,11 @@
   margin-right: 1.25%;
   margin-bottom: 2%;
   display: inline-block;
+  transition: width 1s;
+}
+
+.heroCard:hover {
+  width: 18%;
 }
 
 .heroIcons{
@@ -182,15 +188,36 @@
 
 .mapDivs{
   width: 45%;
-  margin-left: 2%;
-  margin-right: 1.5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
   margin-bottom: 2%;
   border-style: outset;
   display: inline-block;
   background-color: rgb(255, 253, 251);
 }
 
+.mapContainers{
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.242);
+  padding-top: 1%;
+  margin-left: 5%;
+}
 
+/* SignUp styles */
+
+.signupPage{
+  width: 100%;
+  height: 1000px;
+  background-image: url(https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90);
+}
+
+.signupForm{
+  background-color: azure;
+  width: 30%;
+  position: relative;
+  top: 10%;
+  left: 35%;
+}
 
 
 

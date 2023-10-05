@@ -1,7 +1,8 @@
 from config import app,db
 from flask_restful import Resource, Api
-from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Comment
-from flask import jsonify,make_response, session, request, render_template
+from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Save
+from flask import jsonify, make_response, session, request, render_template
+
 
 api = Api(app)
 
@@ -108,16 +109,25 @@ api.add_resource(Maps, '/maps')
 
 class Users(Resource):
     
-    def get(self):
-        users_dict = [user.to_dict() for user in User.query.all()]
-        return make_response(jsonify(users_dict), 200)
+    def post(self):
+        data = request.get_json()
+        username = data['username']
+        password = data['password']
+
+        new_user = User(username = username, password_hash = password)
+
+        db.session.add(new_user)
+        db.session.commit()
+        session['random_user'] = new_user.id
+
+        return {"message":"New User created successfully"}, 201
     
 api.add_resource(Users, '/users')
 
 class UsersById(Resource):
     
     def get(self, id):
-        user_id = [user.id for user in Hero.query.all()]
+        user_id = [user.id for user in User.query.all()]
         if(id in user_id):
             user_dict = User.query.filter_by(id = id).first().to_dict()
             return make_response(jsonify(user_dict), 200)
@@ -126,13 +136,13 @@ class UsersById(Resource):
     
 api.add_resource(UsersById, '/users/<int:id>')
 
-class Comments(Resource):
+class Saves(Resource):
     
     def get(self):
-        comment_dict = [comm.to_dict() for comm in Comment.query.all()]
-        return make_response(jsonify(comment_dict), 200)
+        saves_dict = [save.to_dict() for save in Save.query.all()]
+        return make_response(jsonify(saves_dict), 200)
     
-api.add_resource(Comments, '/comments')
+api.add_resource(Saves, '/saves')
 
 if __name__ == '__main__':
     app.run()

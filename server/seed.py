@@ -1,5 +1,5 @@
 from config import db, app
-from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Comment
+from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Guides
 
 with app.app_context():
     print('Clearing database... \n ')
@@ -11,6 +11,7 @@ with app.app_context():
     Map.query.delete()
     User.query.delete()
     Comment.query.delete()
+
 
     role1 = Role(name ="Tank", icon ="https://static.wikia.nocookie.net/overwatch_gamepedia/images/6/69/TankIcon.png/revision/latest/scale-to-width-down/58?cb=20151109212047", description ="Tank heroes soak up damage, create space for your team, and break apart fortified positions, like closely-grouped enemies and narrow choke-points. If you’re a tank, you lead the charge.")
     role2 = Role(name ="Damage", icon ="https://static.wikia.nocookie.net/overwatch_gamepedia/images/1/14/OffenseIcon.png/revision/latest/scale-to-width-down/57?cb=20151109211953", description ="Damage heroes are responsible for seeking out, engaging, and defeating the enemy using their varied tools and abilities. Playing a damage hero means it is your duty to secure kills.")

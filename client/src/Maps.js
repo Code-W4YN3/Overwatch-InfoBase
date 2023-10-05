@@ -27,8 +27,11 @@ function Maps(){
             <p>Travel the world and fight for the future in diverse locations around the globe. From the technological marvels of Busan to the snow-dusted streets of Toronto, every map has objectives to accomplish, secrets to uncover, and strategies to explore. </p>
             {modes.map((mode)=>(
                 <div style={{ width: "100%", textAlign: "center"}}>
+                    
+                    <div className="mapContainers">
                     <h3>{mode.name} Game Mode</h3>
-                    <div style={{ width: "100%"}}>
+                    <p>{mode.description}</p>
+                    <p>{mode.name} Maps:</p>
                         {mode.maps.map((map)=>(
                             <div className="mapDivs">
                                 <img src={map.image} style={{ width: "100%"}}/>
