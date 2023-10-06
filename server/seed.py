@@ -1,5 +1,5 @@
 from config import db, app
-from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Guides
+from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Guide, Save
 
 with app.app_context():
     print('Clearing database... \n ')
@@ -10,7 +10,8 @@ with app.app_context():
     GameMode.query.delete()
     Map.query.delete()
     User.query.delete()
-    Comment.query.delete()
+    Save.query.delete()
+    Guide.query.delete()
 
 
     role1 = Role(name ="Tank", icon ="https://static.wikia.nocookie.net/overwatch_gamepedia/images/6/69/TankIcon.png/revision/latest/scale-to-width-down/58?cb=20151109212047", description ="Tank heroes soak up damage, create space for your team, and break apart fortified positions, like closely-grouped enemies and narrow choke-points. If you’re a tank, you lead the charge.")
@@ -196,6 +197,17 @@ with app.app_context():
 
     db.session.add_all([m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16, m17, m18, m19, m20, m21, m22, m23, m24, m25, m26, m27, m28, m29, m30, m31])
     print("Seeded Maps. \n ")
+
+    g1 = Guide(name="Reinhardt Guide", url="https://www.gamespot.com/articles/overwatch-2-reinhardt-hero-guide/1100-6508319/", image="https://www.gamespot.com/a/uploads/original/1727/17277836/4049524-overwatch-2-reinhardt-abilities.jpg",)
+    g2 = Guide(name="Sigma Guide", url="https://www.gamespot.com/articles/overwatch-2-sigma-hero-guide/1100-6508580/", image="https://www.gamespot.com/a/uploads/original/1599/15997278/4053586-sigma.jpeg",)
+    g3 = Guide(name="Ana Guide", url="https://www.gamespot.com/articles/overwatch-2-ana-hero-guide/1100-6508444/", image="https://www.gamespot.com/a/uploads/original/1599/15997278/4051650-ana.jpeg",)
+    g4 = Guide(name="Brigitte Guide", url="https://www.gamespot.com/articles/overwatch-2-brigitte-hero-guide/1100-6508350/", image="https://www.gamespot.com/a/uploads/scale_super/1599/15997278/4050129-brigitte2.jpeg",)
+    g5 = Guide(name="Cassidy Guide", url="https://www.gamespot.com/articles/overwatch-2-cassidy-hero-guide/1100-6508386/", image="https://www.gamespot.com/a/uploads/original/1599/15997278/4050709-cassidy.jpeg",)
+    g6 = Guide(name="WidowMaker Guide", url="https://www.gamespot.com/articles/overwatch-2-widowmaker-hero-guide/1100-6508318/", image="https://www.gamespot.com/a/uploads/original/1727/17277836/4049520-overwatch-2-widowmaker-abilities.jpg",)
+    g7 = Guide(name="Genji Guide", url="https://www.gamespot.com/articles/overwatch-2-genji-hero-guide/1100-6508354/", image="https://www.gamespot.com/a/uploads/original/1727/17277836/4050187-overwatch-genji-abilities.jpg",)
+
+    db.session.add_all([g1, g2, g3, g4, g5, g6, g7])
+    print("Seeded Guides. \n ")
 
     db.session.commit()
 

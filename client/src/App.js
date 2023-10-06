@@ -25,6 +25,8 @@ function App() {
     });
   }, []);
 
+  
+
   function handleLogin(user) {
     setUser(user);
   }
@@ -45,12 +47,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar user={user} onLogout={handleLogout}/>
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/heroes' element={<Heroes onChange={handleChange} urlPath={urlPath}/>}/>
           <Route path='/maps' element={<Maps />} />
-          <Route path='/guides' element={<Guides />} />
+          <Route path='/guides' element={<Guides user={user}/>} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn onLogin={handleLogin}/>} />
           <Route path='/user' element={<User user={user}/>} />

@@ -113,7 +113,14 @@ class User(db.Model, SerializerMixin):
         is_valid = bcrypt.check_password_hash(self._password_hash,password.encode('utf-8'))
         return is_valid
 
+class Guide(db.Model, SerializerMixin):
+    __tablename__ = 'guides'
 
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String)
+    image = db.Column(db.String)
+    url = db.Column(db.String)
+    
 class Save(db.Model, SerializerMixin):
     __tablename__ = 'saves'
 
@@ -123,7 +130,7 @@ class Save(db.Model, SerializerMixin):
     name = db.Column(db.String)
     image = db.Column(db.String)
     url = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
+    username = db.Column(db.String, db.ForeignKey('users.username'), nullable = False)
 
 
 

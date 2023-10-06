@@ -46,7 +46,7 @@ function Signup() {
           onChange={(e) => setPass(e.target.value)}
         />
 
-        <button type="submit">SignUp</button>
+        <button type="submit" className="button">SignUp</button>
 
       </form>
     </div>

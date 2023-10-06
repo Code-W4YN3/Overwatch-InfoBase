@@ -1,6 +1,6 @@
 from config import app,db
 from flask_restful import Resource, Api
-from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Save
+from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Save, Guide
 from flask import jsonify, make_response, session, request, render_template
 
 
@@ -126,15 +126,15 @@ api.add_resource(Users, '/users')
 
 class UsersById(Resource):
     
-    def get(self, id):
-        user_id = [user.id for user in User.query.all()]
-        if(id in user_id):
-            user_dict = User.query.filter_by(id = id).first().to_dict()
+    def get(self, username):
+        users = [user.username for user in User.query.all()]
+        if(username in users):
+            user_dict = User.query.filter_by(username = username).first().to_dict()
             return make_response(jsonify(user_dict), 200)
         else:
             return {"error": "User not found"}
     
-api.add_resource(UsersById, '/users/<int:id>')
+api.add_resource(UsersById, '/users/<username>')
 
 class Login(Resource):
 
@@ -168,11 +168,33 @@ class Logout(Resource):
 
 api.add_resource(Logout, '/logout')
 
+class Guides(Resource):
+    
+    def get(self):
+        guides_dict = [guide.to_dict() for guide in Guide.query.all()]
+        return make_response(jsonify(guides_dict), 200)
+    
+api.add_resource(Guides, '/guides')
+
 class Saves(Resource):
     
     def get(self):
         saves_dict = [save.to_dict() for save in Save.query.all()]
         return make_response(jsonify(saves_dict), 200)
+    
+    def post(self):
+        data = request.get_json()
+        name = data['name']
+        url = data['url']
+        image = data['image']
+        username = data['username']
+
+        new_save = Save(name = name , url = url, image = image, username = username)
+
+        db.session.add(new_save)
+        db.session.commit()
+
+        return {"message":"Added to Saves"}, 201
     
 api.add_resource(Saves, '/saves')
 
