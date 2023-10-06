@@ -15,6 +15,7 @@ flask-jwt-extended = "*"
 psycopg2 = "*"
 gunicorn = "*"
 psycopg2-binary = "*"
+importlib-metadata = "*"
 
 [dev-packages]
 
