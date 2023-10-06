@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from "react"
+import { useState, useEffect } from "react";
 import Home from './Home';
 import NavBar from './Navbar';
 import Heroes from './Heroes';
@@ -8,10 +8,30 @@ import Hero from './Hero';
 import Maps from './Maps';
 import Guides from './Guides';
 import SignUp from './signUp';
+import SignIn from './Login';
+import User from './user';
 
 function App() {
   const [ heroID, setHeroID ] = useState(1)
   const [ heroName, setHeroName ] = useState('D.va')
+  const [user, setUser] = useState(null);
+
+
+  useEffect(() => {
+    fetch("/check_session").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function handleLogin(user) {
+    setUser(user);
+  }
+
+  function handleLogout() {
+    setUser(null);
+  }
   
   function handleChange(no, name){
     setHeroID(no)
@@ -32,6 +52,8 @@ function App() {
           <Route path='/maps' element={<Maps />} />
           <Route path='/guides' element={<Guides />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/signin' element={<SignIn onLogin={handleLogin}/>} />
+          <Route path='/user' element={<User user={user}/>} />
           <Route path='/heroes/D.va' element={<Hero id={1}/>} />
           <Route path='/heroes/Doomfist' element={<Hero id={2}/>} />
           <Route path='/heroes/Junker Queen' element={<Hero id={3}/>} />

@@ -16,7 +16,7 @@ function Signup() {
           password: pass,
        }),
        headers: {
-          'Content-type': 'application/json',
+          'Content-type': 'application/json; charset=UTF-8',
        },
     })
        .then((res) => res.json())
@@ -47,6 +47,7 @@ function Signup() {
         />
 
         <button type="submit">SignUp</button>
+
       </form>
     </div>
   );

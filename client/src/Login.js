@@ -1,9 +1,25 @@
 import { useState, useEffect } from "react";
 import './signup.css'
 
-function SignIn(){
+function SignIn({ onLogin}){
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ 
+            username: name, 
+            passwird: pass }),
+        })
+          .then((r) => r.json())
+          .then((user) => onLogin(user));
+      }
+
     return (
         <div className="App">
           <form onSubmit={handleSubmit}>
@@ -20,7 +36,7 @@ function SignIn(){
               onChange={(e) => setPass(e.target.value)}
             />
     
-            <button type="submit">SignUp</button>
+            <button type="submit">SignIn</button>
           </form>
         </div>
       );
