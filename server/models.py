@@ -109,7 +109,7 @@ class User(db.Model, SerializerMixin):
         our_hash = bcrypt.generate_password_hash(password.encode('utf-8'))
         self._password_hash = our_hash.decode('utf-8')
 
-    def validatepassword(self,password):
+    def authenticate(self, password):
         is_valid = bcrypt.check_password_hash(self._password_hash,password.encode('utf-8'))
         return is_valid
 

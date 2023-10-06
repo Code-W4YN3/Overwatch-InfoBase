@@ -3,7 +3,52 @@
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+  position: absolute;
+  top: 12%;
+  margin-left: 37%;
 }
+
+.signTitle{
+  position: absolute;
+  top: -36%;
+  left: 0%;
+  font-size: 200%;
+  color: rgb(255, 187, 60);
+  text-shadow: 5px 5px rgba(211, 211, 211, 0.251);
+}
+
+.switch{
+  position: absolute;
+  top: 105%;
+  left: 30%;
+  font-size: 120%;
+}
+.switch2{
+  position: absolute;
+  top: 105%;
+  left: 24%;
+  font-size: 120%;
+}
+
+.switchButtons{
+  background-color: rgba(39, 39, 39, 0.336);
+  width: 100px;
+  height: 40px;
+  border-bottom-style: inset;
+  border-color: rgba(223, 71, 11, 0.877);
+  padding-top: 4px;
+  color: rgb(36, 36, 36);
+  text-decoration: none;
+}
+
+.switchButtons:hover{
+  background-color: rgba(223, 71, 11, 0.295);
+}
+
+.switchButtons:active{
+  background-color: rgba(223, 71, 11, 0.559);
+}
+
 input {
   display: block;
   width: 20rem;

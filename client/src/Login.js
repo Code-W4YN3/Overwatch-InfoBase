@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
 import './signup.css'
 
 function SignIn({ onLogin}){
+    const navigate = useNavigate();
     const [name, setName] = useState("");
     const [pass, setPass] = useState("");
 
@@ -18,10 +21,14 @@ function SignIn({ onLogin}){
         })
           .then((r) => r.json())
           .then((user) => onLogin(user));
+        navigate('/')
       }
 
     return (
+      <>
+        <img style={{width: "100%", height: "800px"}} src="https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90"/>
         <div className="App">
+          <h2 className="signTitle">Sign In</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
@@ -36,9 +43,12 @@ function SignIn({ onLogin}){
               onChange={(e) => setPass(e.target.value)}
             />
     
-            <a href="/"><button type="submit" className="button">SignIn</button></a>
+          <button type="submit" className="button">Sign In</button>
           </form>
+
+          <p className="switch" style={{color: "white"}}>New User? <Link className='switchButtons' to={'/signup'} style={{ width: "100px"}}> Sign Up </Link></p>
         </div>
+      </>
       );
     }
     

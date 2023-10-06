@@ -11,8 +11,7 @@ function User({ user }){
           setUserSaves(data)
         })
     },[])
-
-    console.log(userSaves)
+    
 
     return(
         <>

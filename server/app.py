@@ -197,6 +197,24 @@ class Saves(Resource):
         return {"message":"Added to Saves"}, 201
     
 api.add_resource(Saves, '/saves')
+    
+class SavesID(Resource):
+
+    def delete(self, id):
+        save = Save.query.filter_by(id=id).first()
+
+        db.session.delete(save)
+        db.session.commit()
+
+        response = make_response(
+            {"msg": "Deleted Save"}
+        )
+
+        return response
+    
+api.add_resource(SavesID, '/saves/<int:id>')
+    
+
 
 if __name__ == '__main__':
     app.run()

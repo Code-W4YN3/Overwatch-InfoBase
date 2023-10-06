@@ -15,12 +15,13 @@ function NavBar({ onLogout, user }) {
         <>
         <div id='navBar'>
             <div className="navContainers">
-                <Link className='navButtons' to={'/'}> Home </Link>
-                <Link className='navButtons' to={'/heroes'}> Heroes </Link>
-                <Link className='navButtons' to={'/maps'}> Maps </Link>
-                <Link className='navButtons' to={'/guides'}> Guides </Link>
-                <Link className='navButtons' to={'/user'}> Account </Link>
-                <a href='/'><button onClick={handleLogout}>Logout</button></a>
+                <img style={{width: "90px", height: "55px", marginTop: "4%"}} src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "11%"}} className='navButtons' to={'/'}> Home </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "22%"}} className='navButtons' to={'/heroes'}> Heroes </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "33%"}} className='navButtons' to={'/maps'}> Maps </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "44%"}} className='navButtons' to={'/guides'}> Guides </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "55%"}} className='navButtons' to={'/user'}> Account </Link>
+                <a href='/'><button id="Logout" onClick={handleLogout} style={{ position: "absolute", top: "14%", fontSize: "150%", left: "89%"}}>Logout</button></a>
               
             </div>
         </div>
@@ -31,13 +32,13 @@ function NavBar({ onLogout, user }) {
             <>
         <div id='navBar'>
             <div className="navContainers">
-                <Link className='navButtons' to={'/'}> Home </Link>
-                <Link className='navButtons' to={'/heroes'}> Heroes </Link>
-                <Link className='navButtons' to={'/maps'}> Maps </Link>
-                <Link className='navButtons' to={'/guides'}> Guides </Link>
-                <Link className='navButtons' to={'/user'}> Account </Link>
-                <Link className='navButtons' to={'/signup'}> Sign Up </Link>
-                <Link className='navButtons' to={'/signin'}> Sign In </Link>
+                <img style={{width: "90px", height: "55px", marginTop: "4%"}} src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "11%"}} className='navButtons' to={'/'}> Home </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "22%"}} className='navButtons' to={'/heroes'}> Heroes </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "33%"}} className='navButtons' to={'/maps'}> Maps </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "44%"}} className='navButtonsDisabled' to={'/signin'}> Guides </Link>
+                <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "55%"}} className='navButtonsDisabled' to={'/signin'}> Account </Link>
+                <Link className='navButtons' to={'/signin'} style={{ position: "absolute", top: "14%", fontSize: "150%", left: "89%"}}> Sign In </Link>
               
             </div>
         </div>

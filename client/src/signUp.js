@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+
 import './signup.css'
 
 function Signup() {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [posts, setPosts] = useState([]);
@@ -9,6 +12,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(name && pass){
     fetch('/users', {
        method: 'POST',
        body: JSON.stringify({
@@ -24,14 +28,19 @@ function Signup() {
           setPosts((posts) => [post, ...posts]);
           setName('');
           setPass('');
+          navigate('/signin')
        })
        .catch((err) => {
           console.log(err.message);
        });
+      }
  };
 
   return (
+    <>
+      <img style={{width: "100%", height: "800px"}} src="https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90"/>
     <div className="App">
+      <h2 className="signTitle">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -46,10 +55,13 @@ function Signup() {
           onChange={(e) => setPass(e.target.value)}
         />
 
-        <button type="submit" className="button">SignUp</button>
+      <button type="submit" className="button">SignUp</button>
 
       </form>
+      <p className="switch2" style={{color: "white"}}>Already a User? <Link className='switchButtons' to={'/signin'} style={{ width: "100px"}}> Sign Up </Link></p>
+
     </div>
+    </>
   );
 }
 
