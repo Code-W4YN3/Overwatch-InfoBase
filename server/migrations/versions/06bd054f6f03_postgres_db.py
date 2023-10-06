@@ -1,8 +1,8 @@
-"""initial
+"""postgres db
 
-Revision ID: 317ebe7af42a
+Revision ID: 06bd054f6f03
 Revises: 
-Create Date: 2023-10-06 11:35:05.233618
+Create Date: 2023-10-06 23:21:47.495597
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '317ebe7af42a'
+revision = '06bd054f6f03'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -23,6 +23,13 @@ def upgrade():
     sa.Column('name', sa.String(), nullable=True),
     sa.Column('icon', sa.String(), nullable=True),
     sa.Column('description', sa.String(), nullable=True),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('guides',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(), nullable=True),
+    sa.Column('image', sa.String(), nullable=True),
+    sa.Column('url', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('passive_abilities',
@@ -103,5 +110,6 @@ def downgrade():
     op.drop_table('users')
     op.drop_table('roles')
     op.drop_table('passive_abilities')
+    op.drop_table('guides')
     op.drop_table('game_modes')
     # ### end Alembic commands ###

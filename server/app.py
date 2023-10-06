@@ -1,4 +1,5 @@
 from config import app,db
+import os
 from flask_restful import Resource, Api
 from models import Role, Hero, PassiveAbility, HeroPassive, GameMode, Map, User, Save, Guide
 from flask import jsonify, make_response, session, request, render_template

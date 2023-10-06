@@ -7,7 +7,7 @@ import os
 db = SQLAlchemy()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///overwatch.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://wayneywoohoo:glQegfWf8EgP3i9xBZQAc8n6AlWpJYOS@dpg-ckg6eemafg7c73bp0cmg-a.ohio-postgres.render.com/overwatch'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = b'Y\xf1Xz\x00\xad|eQ\x80t \xca\x1a\x10K'
 
