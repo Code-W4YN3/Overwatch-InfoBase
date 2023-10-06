@@ -35,6 +35,14 @@
   width: 60%;
 }
 
+#platforms{
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 50%;
+} 
+
+
 /* Heroes style */
 
 #heroesheader{
