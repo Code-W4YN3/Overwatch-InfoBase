@@ -19,29 +19,17 @@ To run this app locally, you need a PC with:
 
 ### Installation Process
   1. Clone this repository using
-    ```bash
-      git clone git@github.com:Code-W4YN3/Overwatch-InfoBase.git
-    ```
-  2. Navigate into the project folder.
-    ```bash
-      cd Overwatch-InfoBase
-    ```
-  3. Run this command to install project dependencies:
-    ```
-      pipenv install
-    ```
-  4. Navigate into the client folder using:
-    ```
-      cd client
-    ```
-  5. Create a build using:
-    ```
-      npm run build
-    ```
-  6. Run the app on the browser using:
-    ```
-      gunicorn --chdir server app:app
-    ```
+    ``` git clone git@github.com:Code-W4YN3/Overwatch-InfoBase.git ```
+  3. Navigate into the project folder.
+    ``` cd Overwatch-InfoBase ```
+  4. Run this command to install project dependencies:
+    ``` pipenv install ```
+  5. Navigate into the client folder using:
+    ``` cd client ```
+  6. Create a build using:
+    ```npm run build```
+  7. Run the app on the browser using:
+    ```gunicorn --chdir server app:app```
 
 ## Database Domain Model:
 
