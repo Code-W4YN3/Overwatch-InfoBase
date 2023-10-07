@@ -37,21 +37,21 @@ function Heroes({ onChange, urlPath }){
             <h2 className="roleTitles">TANK</h2>
             <p className="roleDescription">{roles[0]?.description}</p>
             <div className="heroList">
-                {heroes.filter(hero => hero.role_id == 1).map((hero)=>(
+                {heroes.filter(hero => hero.role_id === 1).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>
             <h2 className="roleTitles">DAMAGE</h2>
             <p className="roleDescription">{roles[1]?.description}</p>
             <div className="heroList">
-                {heroes.filter(hero => hero.role_id == 2).map((hero)=>(
+                {heroes.filter(hero => hero.role_id === 2).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>
             <h2 className="roleTitles">SUPPORT</h2>
             <p className="roleDescription">{roles[2]?.description}</p>
             <div className="heroList">
-                {heroes.filter(hero => hero.role_id == 3).map((hero)=>(
+                {heroes.filter(hero => hero.role_id === 3).map((hero)=>(
                     <HeroCard hero={hero} key={hero.id} onSelect={handleSelect} urlPath={urlPath}/>
                 ))}
             </div>

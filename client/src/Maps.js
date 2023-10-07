@@ -2,15 +2,9 @@ import { useState,useEffect } from "react"
 
 
 function Maps(){
-    const [ maps, setMaps ] = useState([]) 
     const [ modes, setModes ] = useState([]) 
 
     useEffect(()=>{
-        fetch('/maps')
-        .then((res)=> res.json())
-        .then(data => {
-          setMaps(data)
-        })
         fetch('/gamemodes')
         .then((res)=> res.json())
         .then(data => {
@@ -36,7 +30,7 @@ function Maps(){
                     <h3 className="modeMapTitle">{mode.name} Maps:</h3>
                         {mode.maps.map((map)=>(
                             <div className="mapDivs">
-                                <img src={map.image} style={{ width: "100%"}}/>
+                                <img alt={map.name} src={map.image} style={{ width: "100%"}}/>
                                 <div>
                                     <p>{map.name}, {map.location}</p>
                                 </div>

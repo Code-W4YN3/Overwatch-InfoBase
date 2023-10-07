@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
 import './signup.css'
@@ -26,7 +26,7 @@ function SignIn({ onLogin}){
 
     return (
       <>
-        <img style={{width: "100%", height: "800px"}} src="https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90"/>
+        <img alt="background" style={{width: "100%", height: "800px"}} src="https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt912826400bb9b504/6308459c47fdc2115dced822/cloud-2600.jpg?format=webply&quality=90"/>
         <div className="App">
           <h2 className="signTitle">Sign In</h2>
           <form onSubmit={handleSubmit}>

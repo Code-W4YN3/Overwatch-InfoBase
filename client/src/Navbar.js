@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
-
 
 function NavBar({ onLogout, user }) {
 
@@ -15,7 +13,7 @@ function NavBar({ onLogout, user }) {
         <>
         <div id='navBar'>
             <div className="navContainers">
-                <img style={{width: "90px", height: "55px", marginTop: "4%"}} src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
+                <img style={{width: "90px", height: "55px", marginTop: "4%"}} alt="logo" src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "11%"}} className='navButtons' to={'/'}> Home </Link>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "22%"}} className='navButtons' to={'/heroes'}> Heroes </Link>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "33%"}} className='navButtons' to={'/maps'}> Maps </Link>
@@ -32,7 +30,7 @@ function NavBar({ onLogout, user }) {
             <>
         <div id='navBar'>
             <div className="navContainers">
-                <img style={{width: "90px", height: "55px", marginTop: "4%"}} src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
+                <img style={{width: "90px", height: "55px", marginTop: "4%"}} alt='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Overwatch_2_logo.svg/2560px-Overwatch_2_logo.svg.png'/>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "11%"}} className='navButtons' to={'/'}> Home </Link>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "22%"}} className='navButtons' to={'/heroes'}> Heroes </Link>
                 <Link style={{ position: "absolute", top: "13%", fontSize: "150%", left: "33%"}} className='navButtons' to={'/maps'}> Maps </Link>
