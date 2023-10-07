@@ -46,7 +46,7 @@ function SignIn({ onLogin}){
           <button type="submit" className="button">Sign In</button>
           </form>
 
-          <p className="switch" style={{color: "white"}}>New User? <Link className='switchButtons' to={'/signup'} style={{ width: "100px"}}> Sign Up </Link></p>
+          <p className="switch" style={{color: "white"}}>New User? <Link className='switchButtons' to={'/owsignup'} style={{ width: "100px"}}> Sign Up </Link></p>
         </div>
       </>
       );

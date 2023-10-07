@@ -16,7 +16,7 @@ function User({ user }){
     return(
         <>
             <div id="userBody">
-            <h1 style={{paddingTop: "15%"}}>Hello @{user?.username}!</h1>
+            <h1 style={{paddingTop: "15%", color: "white"}}>Hello @{user?.username}!</h1>
             <div style={{ width: "100%"}}>
             <h3>Saved Articles:</h3>
             {userSaves.filter(user => user.username === userId).map((guide)=>(

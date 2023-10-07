@@ -26,7 +26,7 @@ function Signup() {
        .then(() => {
           setName('');
           setPass('');
-          navigate('/signin')
+          navigate('/owsignin')
        })
        .catch((err) => {
           console.log(err.message);
@@ -56,7 +56,7 @@ function Signup() {
       <button type="submit" className="button">SignUp</button>
 
       </form>
-      <p className="switch2" style={{color: "white"}}>Already a User? <Link className='switchButtons' to={'/signin'} style={{ width: "100px"}}> Sign Up </Link></p>
+      <p className="switch2" style={{color: "white"}}>Already a User? <Link className='switchButtons' to={'/owsignin'} style={{ width: "100px"}}> Sign Up </Link></p>
 
     </div>
     </>

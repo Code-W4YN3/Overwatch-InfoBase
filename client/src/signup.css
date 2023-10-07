@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   margin-top: 5rem;
-  position: absolute;
+  position: fixed;
   top: 12%;
   margin-left: 37%;
 }

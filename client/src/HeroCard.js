@@ -1,12 +1,14 @@
-function HeroCard({ hero, onSelect, urlPath }){
+import { Link } from 'react-router-dom';
 
+function HeroCard({ hero, onSelect, urlPath }){
+    let direct = `/owheroes/${hero.name}`
     function handleClick(){
         onSelect(hero.id, hero.name)
     }
 
     if(hero.role_id === 1){
         return(
-        <a href={urlPath}>
+        <Link to={direct}>
         <div className="heroCard" onClick={handleClick}>
             <img className="heroIcons" alt={hero.name} src={hero.icon} />
             <div className="heroCardDetails">
@@ -16,7 +18,7 @@ function HeroCard({ hero, onSelect, urlPath }){
                 </div>
             </div>
         </div>
-        </a>
+        </Link>
         )
     }else if(hero.role_id === 2){
         return(
