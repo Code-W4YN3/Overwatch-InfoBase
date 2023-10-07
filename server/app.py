@@ -8,8 +8,9 @@ from flask import jsonify, make_response, session, request, render_template
 api = Api(app)
 
 @app.route('/')
-def home():
-    return {'Welcome': 'to Overwatch 2 Api!'}
+@app.route('/<int:id>')
+def home(id=0):
+    return render_template("index.html")
 
 class Heroes(Resource):
     
