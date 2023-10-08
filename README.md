@@ -22,14 +22,19 @@ To run this app locally, you need a PC with:
     ``` git clone git@github.com:Code-W4YN3/Overwatch-InfoBase.git ```
   3. Navigate into the project folder.
     ``` cd Overwatch-InfoBase ```
-  4. Run this command to install project dependencies:
-    ``` pipenv install ```
-  5. Navigate into the client folder using:
+  4. Navigate into the client folder using:
     ``` cd client ```
-  6. Create a build using:
-    ```npm run build```
-  7. Run the app on the browser using:
-    ```gunicorn --chdir server app:app```
+  5. Create a build using:
+    ``` npm run build ```
+  6. Open a new terminal and run this command to install project dependencies:
+    ``` pipenv install ```
+  7. Enter a python virtual environment using:
+    ``` pipenv shell ```
+  8. Run the command:
+    ``` export DATABASE_URI=postgresql://wayneywoohoo:glQegfWf8EgP3i9xBZQAc8n6AlWpJYOS@dpg-ckg6eemafg7c73bp0cmg-a.ohio-postgres.render.com/overwatch ```
+  9. Run the app on the browser using:
+    ``` gunicorn --chdir server app:app ```
+
 
 ## Database Domain Model:
 

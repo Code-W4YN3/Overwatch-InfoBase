@@ -51,7 +51,7 @@ function Guides({ user }){
             <div id="guideBelt">
                 <h1 id='guideTitle'>Guides</h1>
             </div>
-            <p style={{ textAlign: "center", paddingTop: "5%", color: "white", fontSize: "120%"}}>Take a look at some guides below to better your skill!</p>
+            <p style={{ textAlign: "center", paddingTop: "5%", color: "white", fontSize: "150%"}}>Take a look at some guides below to better your skill!</p>
             {guides.map((guide)=>(
                 <div className="guideDiv" onMouseOverCapture={()=>{setName(guide.name); setUrl(guide.url); setImage(guide.image);}}>
                     <a href={guide.url}><img className='guideImage' alt={guide.name} src={guide.image}/></a>
