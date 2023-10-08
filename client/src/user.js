@@ -22,7 +22,7 @@ function User({ user }){
             <h3 id="saved" style={{marginLeft: "10%"}}>Saved Articles:</h3>
             {userSaves.filter(user => user.username === userId).map((guide)=>(
                 <div className="guideDiv">
-                    <a href={guide.url}><img alt="guide link" className='guideImage' src={guide.image}/></a>
+                    <img alt="guide link" className='guideImage' src={guide.image}/>
                     <span style={{ display: "flex", marginLeft: "10%"}}><h3>{guide.name}</h3></span>
                 </div>      
             ))}
