@@ -22,7 +22,7 @@ function HeroCard({ hero, onSelect, urlPath }){
         )
     }else if(hero.role_id === 2){
         return(
-            <a href={urlPath}>
+            <Link to={direct}>
             <div className="heroCard" onClick={handleClick}>
                 <img className="heroIcons" alt={hero.name} src={hero.icon} />
                 <div className="heroCardDetails">
@@ -32,11 +32,11 @@ function HeroCard({ hero, onSelect, urlPath }){
                     </div>
                 </div>
             </div>
-            </a>
+            </Link>
             )
     }else{
         return(
-            <a href={urlPath}>
+            <Link to={direct}>
             <div className="heroCard" onClick={handleClick}>
                 <img className="heroIcons" alt={hero.name} src={hero.icon} />
                 <div className="heroCardDetails">
@@ -46,7 +46,7 @@ function HeroCard({ hero, onSelect, urlPath }){
                     </div>
                 </div>
             </div>
-            </a>
+            </Link>
             )
     }
   }
