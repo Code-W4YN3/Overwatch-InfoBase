@@ -1,4 +1,6 @@
 import { useState,useEffect } from "react"
+import { Link } from 'react-router-dom';
+
 
 
 function Maps(){
@@ -30,7 +32,7 @@ function Maps(){
                     <h3 className="modeMapTitle">{mode.name} Maps:</h3>
                         {mode.maps.map((map)=>(
                             <div className="mapDivs">
-                                <a href={map.image}><img alt={map.name} src={map.image} style={{ width: "100%"}}/></a>
+                                <Link to={map.image}><img alt={map.name} src={map.image} style={{ width: "100%"}}/></Link>
                                 <div>
                                     <p>{map.name}, {map.location}</p>
                                 </div>
