@@ -32,7 +32,7 @@ function Maps(){
                     <h3 className="modeMapTitle">{mode.name} Maps:</h3>
                         {mode.maps.map((map)=>(
                             <div className="mapDivs">
-                                <img alt={map.name} src={map.image} style={{ width: "100%"}}/>
+                                <a href={map.image}><img alt={map.name} src={map.image} style={{ width: "100%"}}/></a>
                                 <div>
                                     <p>{map.name}, {map.location}</p>
                                 </div>
