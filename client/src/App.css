@@ -1,3 +1,7 @@
+*{
+  font-family: 'Quantico', sans-serif;
+}
+
 #navBar{
   position: fixed;
   top: 2%;
@@ -194,6 +198,7 @@
   display: inline-flex;
   margin-top: 2%;
   margin-bottom: 5%;
+  color: black;
 }
 
 .heroName{
